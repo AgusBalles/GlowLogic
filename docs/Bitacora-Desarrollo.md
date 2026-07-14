@@ -392,3 +392,24 @@ Estructura principal:
 **Motivo:**
 
 Esta organización facilita el mantenimiento del proyecto, mejora la escalabilidad y sigue una estructura ampliamente utilizada en proyectos Full Stack profesionales.
+
+## Decisión #022 - Configuración inicial del backend
+
+**Fecha:** 14/07/2026
+
+**Decisión:**
+
+Se configura el backend utilizando Spring Boot 3, Java 21 y Maven como gestor de dependencias.
+
+Dependencias iniciales:
+
+- Spring Web
+- Spring Data JPA
+- Spring Validation
+- MySQL Connector
+- Lombok
+- Spring Boot Starter Test
+
+**Motivo:**
+
+Estas tecnologías proporcionan una base sólida para el desarrollo de una API REST moderna, escalable y alineada con las prácticas más utilizadas en el desarrollo backend con Java.
