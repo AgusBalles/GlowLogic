@@ -372,3 +372,23 @@ Se implementará una tabla intermedia llamada `LookProduct` para representar la 
 **Motivo:**
 
 Un look puede contener múltiples productos y un mismo producto puede formar parte de distintos looks. La utilización de una tabla intermedia permite mantener un modelo de datos normalizado y escalable.
+
+
+
+## Decisión #021 - Organización del repositorio
+
+**Fecha:** 14/07/2026
+
+**Decisión:**
+
+Se adopta una estructura de repositorio separando el backend, frontend y documentación en carpetas independientes.
+
+Estructura principal:
+
+- backend
+- frontend
+- docs
+
+**Motivo:**
+
+Esta organización facilita el mantenimiento del proyecto, mejora la escalabilidad y sigue una estructura ampliamente utilizada en proyectos Full Stack profesionales.
