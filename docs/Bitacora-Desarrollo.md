@@ -359,3 +359,16 @@ Los productos no tendrán un campo de notas personales en la primera versión.
 **Motivo:**
 
 Esta funcionalidad puede ser incorporada en futuras versiones, pero no es esencial para la gestión principal de la colección de maquillaje.
+
+
+## Decisión #020 - Relación muchos a muchos entre Looks y Productos
+
+**Fecha:** 14/07/2026
+
+**Decisión:**
+
+Se implementará una tabla intermedia llamada `LookProduct` para representar la relación entre los looks y los productos.
+
+**Motivo:**
+
+Un look puede contener múltiples productos y un mismo producto puede formar parte de distintos looks. La utilización de una tabla intermedia permite mantener un modelo de datos normalizado y escalable.
