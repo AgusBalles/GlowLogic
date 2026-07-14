@@ -413,3 +413,21 @@ Dependencias iniciales:
 **Motivo:**
 
 Estas tecnologías proporcionan una base sólida para el desarrollo de una API REST moderna, escalable y alineada con las prácticas más utilizadas en el desarrollo backend con Java.
+
+## Decisión #023 - Creación de la base de datos
+
+**Fecha:** 14/07/2026
+
+**Decisión:**
+
+Se crea la base de datos `glowlogic` utilizando MySQL con codificación UTF-8 (`utf8mb4`).
+
+**Configuración:**
+
+- Motor: MySQL 8
+- Charset: utf8mb4
+- Collation: utf8mb4_unicode_ci
+
+**Motivo:**
+
+Se selecciona UTF-8 para asegurar compatibilidad con caracteres especiales, emojis y una correcta internacionalización de la aplicación.
