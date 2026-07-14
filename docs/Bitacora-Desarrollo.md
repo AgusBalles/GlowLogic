@@ -306,6 +306,56 @@ Para representar esta relación muchos a muchos se utilizará una entidad interm
 **Motivo:**
 
 Permite reutilizar productos en diferentes looks y mantiene un modelo de datos normalizado.
+
 **Motivo:**
 
 Aunque las categorías serán fijas, mantenerlas como una entidad independiente permite un diseño más escalable, facilita futuras modificaciones y sigue buenas prácticas de modelado relacional.
+
+
+## Decisión #017 - Ubicación de productos
+
+**Fecha:** 14/07/2026
+
+**Decisión:**
+
+La ubicación de los productos será almacenada como texto libre.
+
+Ejemplos:
+
+- Tocador.
+- Cajón de maquillaje.
+- Neceser.
+- Bolso de viaje.
+- Cajón personalizado.
+
+**Motivo:**
+
+Cada usuario puede organizar sus productos de diferentes maneras. Permitir una ubicación personalizada entrega mayor flexibilidad y evita limitar al usuario a opciones predefinidas.
+
+---
+
+## Decisión #018 - Prioridad en Wishlist
+
+**Fecha:** 14/07/2026
+
+**Decisión:**
+
+La lista de deseos no contará con un sistema de prioridades en la primera versión del proyecto.
+
+**Motivo:**
+
+Aunque puede ser una funcionalidad útil, no es necesaria para el funcionamiento principal del MVP. Se mantiene fuera del alcance inicial para reducir complejidad y enfocarnos en las funcionalidades principales.
+
+---
+
+## Decisión #019 - Notas personales en productos
+
+**Fecha:** 14/07/2026
+
+**Decisión:**
+
+Los productos no tendrán un campo de notas personales en la primera versión.
+
+**Motivo:**
+
+Esta funcionalidad puede ser incorporada en futuras versiones, pero no es esencial para la gestión principal de la colección de maquillaje.
