@@ -253,7 +253,59 @@ Categoría:
 Producto:
 
 - categoria_id
+## Decisión #014 - Gestión de Wishlist
 
+**Fecha:** 14/07/2026
+
+**Decisión:**
+
+La lista de deseos permitirá guardar productos que el usuario desea adquirir en el futuro.
+
+**Modelo:**
+
+La Wishlist tendrá una relación entre Usuario y Producto, permitiendo almacenar la fecha en que un producto fue agregado.
+
+**Motivo:**
+
+Permite gestionar productos deseados sin perder información y facilita futuras mejoras como prioridades o conversión de wishlist a colección.
+
+---
+
+## Decisión #015 - Creación de Looks de maquillaje
+
+**Fecha:** 14/07/2026
+
+**Decisión:**
+
+Los usuarios podrán crear looks personalizados asociados a productos de su colección.
+
+Cada look tendrá:
+
+- Nombre.
+- Descripción.
+- Imagen.
+- Favorito.
+- Fecha de creación.
+
+**Motivo:**
+
+Esta funcionalidad entrega un valor adicional al usuario, permitiendo organizar combinaciones de productos y rutinas de maquillaje.
+
+---
+
+## Decisión #016 - Relación entre Looks y Productos
+
+**Fecha:** 14/07/2026
+
+**Decisión:**
+
+Los looks podrán contener múltiples productos y un producto podrá pertenecer a múltiples looks.
+
+Para representar esta relación muchos a muchos se utilizará una entidad intermedia llamada LookProducto.
+
+**Motivo:**
+
+Permite reutilizar productos en diferentes looks y mantiene un modelo de datos normalizado.
 **Motivo:**
 
 Aunque las categorías serán fijas, mantenerlas como una entidad independiente permite un diseño más escalable, facilita futuras modificaciones y sigue buenas prácticas de modelado relacional.
