@@ -187,3 +187,73 @@ Terminado.
 
 Es más intuitivo para una aplicación orientada a usuarios finales.
 ---
+## Decisión #011 - Marcas compartidas
+
+**Fecha:** 14/07/2026
+
+**Decisión:**
+
+Las marcas serán compartidas entre todos los usuarios de la aplicación.
+
+**Motivo:**
+
+Una marca representa información general de un producto y no pertenece a un usuario específico. 
+Mantenerlas compartidas evita la duplicación de información y permite reutilizar marcas existentes dentro del sistema.
+
+**Ejemplo:**
+
+Una marca como "Maybelline" podrá ser utilizada por diferentes usuarios sin necesidad de crear registros duplicados.
+
+---
+
+## Decisión #012 - Categorías predefinidas
+
+**Fecha:** 14/07/2026
+
+**Decisión:**
+
+Las categorías de productos serán administradas por el sistema y estarán predefinidas.
+
+Ejemplos:
+
+- Base
+- Corrector
+- Rubor
+- Polvo
+- Iluminador
+- Labial
+- Sombras
+- Máscara de pestañas
+- Delineador
+- Brochas
+- Skincare
+- Otros
+
+**Motivo:**
+
+Mantener categorías controladas permite una clasificación consistente de los productos, facilita las búsquedas y evita la creación de categorías duplicadas o similares por parte de los usuarios.
+
+---
+
+## Decisión #013 - Implementación de categorías mediante tabla independiente
+
+**Fecha:** 14/07/2026
+
+**Decisión:**
+
+Las categorías serán almacenadas en una tabla propia dentro de la base de datos y los productos tendrán una referencia hacia dicha tabla mediante una clave foránea.
+
+**Modelo:**
+
+Categoría:
+
+- id
+- nombre
+
+Producto:
+
+- categoria_id
+
+**Motivo:**
+
+Aunque las categorías serán fijas, mantenerlas como una entidad independiente permite un diseño más escalable, facilita futuras modificaciones y sigue buenas prácticas de modelado relacional.
