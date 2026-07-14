@@ -50,6 +50,7 @@ Representa los productos de maquillaje pertenecientes a un usuario.
 | calificacion | INT | Valoración de 1 a 5 estrellas |
 | volveria_comprar | BOOLEAN | Indica si compraría nuevamente |
 | estado | VARCHAR(50) | Estado actual del producto |
+| ubicacion | VARCHAR(100) | Lugar donde se almacena el producto |
 | usuario_id | BIGINT | Usuario propietario |
 | marca_id | BIGINT | Marca asociada |
 | categoria_id | BIGINT | Categoría asociada |
@@ -97,18 +98,23 @@ Ejemplos:
 
 # Wishlist
 
-Representa los productos que un usuario desea adquirir.
+Representa los productos que un usuario desea adquirir en el futuro.
+
+La Wishlist funciona como una lista independiente de la colección actual, ya que un usuario puede querer comprar productos que todavía no posee.
 
 ### Atributos
 
 | Campo | Tipo | Descripción |
 |---|---|---|
 | id | BIGINT | Identificador único |
+| nombre_producto | VARCHAR(150) | Nombre del producto deseado |
+| marca_id | BIGINT | Marca asociada |
+| categoria_id | BIGINT | Categoría asociada |
+| precio_estimado | DECIMAL(10,2) | Precio aproximado |
+| imagen | VARCHAR(255) | Imagen del producto |
+| enlace_compra | VARCHAR(255) | Enlace opcional de compra |
 | usuario_id | BIGINT | Usuario propietario |
-| producto_id | BIGINT | Producto deseado |
-| fecha_agregado | DATE | Fecha en que se agregó |
-
----
+| fecha_agregado | DATE | Fecha en que fue agregado |
 
 # Look
 
