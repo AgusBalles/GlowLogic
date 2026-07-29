@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import jakarta.validation.Valid;
+
 
 @RestController
 public class UserController {
@@ -26,7 +29,7 @@ public class UserController {
     }
 
     @PostMapping("/api/users")
-    public UserResponse createUser(@RequestBody UserRequest request) {
+    public UserResponse createUser(@Valid @RequestBody UserRequest request) {
         return userService.createUser(request);
     }
 
@@ -37,8 +40,15 @@ public class UserController {
     @PutMapping("/api/users/{id}")
     public UserResponse updateUser(
             @PathVariable Long id,
-            @RequestBody UserRequest request) {
+            @Valid @RequestBody UserRequest request) {
 
         return userService.updateUser(id, request);
+
     }
+
+    @DeleteMapping("/api/users/{id}")
+    public void deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
+    }
+
 }

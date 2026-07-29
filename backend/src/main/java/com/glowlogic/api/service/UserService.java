@@ -17,7 +17,7 @@ public class UserService {
     }
 
     public List<UserResponse> getAllUsers() {
-        return userRepository.findAll()
+        return userRepository.findByActiveTrue()
                 .stream()
                 .map(this::toResponse)
                 .toList();
@@ -72,4 +72,14 @@ public class UserService {
                 user.getUpdatedAt()
         );
     }
+    public void deleteUser(Long id) {
+
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
+        user.setActive(false);
+
+        userRepository.save(user);
+    }
+
 }
