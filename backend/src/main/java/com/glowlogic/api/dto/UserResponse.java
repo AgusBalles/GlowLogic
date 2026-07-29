@@ -4,7 +4,7 @@ package com.glowlogic.api.dto;
 
 import java.time.LocalDateTime;
 
-public class AppUserResponse {
+public class UserResponse {
 
     private Long id;
     private String firstName;
@@ -14,12 +14,12 @@ public class AppUserResponse {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public AppUserResponse() {
+    public UserResponse() {
     }
 
-    public AppUserResponse(Long id, String firstName, String lastName,
-                           String email, Boolean active,
-                           LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public UserResponse(Long id, String firstName, String lastName,
+                        String email, Boolean active,
+                        LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

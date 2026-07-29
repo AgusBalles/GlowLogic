@@ -1,16 +1,16 @@
 package com.glowlogic.api.dto;
 
-public class AppUserRequest {
+public class UserRequest {
 
     private String firstName;
     private String lastName;
     private String email;
     private String password;
 
-    public AppUserRequest() {
+    public UserRequest() {
     }
 
-    public AppUserRequest(String firstName, String lastName, String email, String password) {
+    public UserRequest(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

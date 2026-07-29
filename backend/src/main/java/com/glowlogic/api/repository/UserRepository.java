@@ -1,10 +1,10 @@
 package com.glowlogic.api.repository;
 
-import com.glowlogic.api.entity.AppUser;
+import com.glowlogic.api.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AppUserRepository extends JpaRepository<AppUser, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
 }
