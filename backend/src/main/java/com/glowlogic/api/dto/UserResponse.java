@@ -1,25 +1,65 @@
 package com.glowlogic.api.dto;
 
-
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.time.LocalDateTime;
 
 public class UserResponse {
 
+    @Schema(
+            description = "Identificador único del usuario",
+            example = "1"
+    )
     private Long id;
+
+    @Schema(
+            description = "Nombre del usuario",
+            example = "Agustina"
+    )
     private String firstName;
+
+    @Schema(
+            description = "Apellido del usuario",
+            example = "Ballesteros"
+    )
     private String lastName;
+
+    @Schema(
+            description = "Correo electrónico del usuario",
+            example = "agustina@gmail.com"
+    )
     private String email;
+
+    @Schema(
+            description = "Indica si el usuario se encuentra activo",
+            example = "true"
+    )
     private Boolean active;
+
+    @Schema(
+            description = "Fecha de creación del usuario",
+            example = "2026-08-04T10:30:00"
+    )
     private LocalDateTime createdAt;
+
+    @Schema(
+            description = "Fecha de la última actualización del usuario",
+            example = "2026-08-04T11:15:00"
+    )
     private LocalDateTime updatedAt;
 
     public UserResponse() {
     }
 
-    public UserResponse(Long id, String firstName, String lastName,
-                        String email, Boolean active,
-                        LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public UserResponse(
+            Long id,
+            String firstName,
+            String lastName,
+            String email,
+            Boolean active,
+            LocalDateTime createdAt,
+            LocalDateTime updatedAt) {
+
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -33,55 +73,27 @@ public class UserResponse {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getFirstName() {
         return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public String getEmail() {
         return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public Boolean getActive() {
         return active;
     }
 
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
-
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
     }
 }
