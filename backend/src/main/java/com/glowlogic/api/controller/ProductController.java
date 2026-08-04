@@ -32,7 +32,10 @@ public class ProductController {
             description = "Retorna una lista con todos los productos activos registrados en el sistema."
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Productos obtenidos correctamente")
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Productos obtenidos correctamente"
+            )
     })
     @GetMapping
     public List<ProductResponse> getAllProducts() {
@@ -45,8 +48,14 @@ public class ProductController {
             description = "Permite registrar un nuevo producto de maquillaje en el inventario."
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Producto creado correctamente"),
-            @ApiResponse(responseCode = "400", description = "Datos enviados inválidos")
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Producto creado correctamente"
+            ),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "Datos inválidos enviados en la solicitud"
+            )
     })
     @PostMapping
     public ProductResponse createProduct(
@@ -61,8 +70,14 @@ public class ProductController {
             description = "Busca un producto específico utilizando su identificador único."
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Producto encontrado"),
-            @ApiResponse(responseCode = "404", description = "Producto no encontrado")
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Producto encontrado correctamente"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Producto no encontrado"
+            )
     })
     @GetMapping("/{id}")
     public ProductResponse getProductById(
@@ -77,9 +92,18 @@ public class ProductController {
             description = "Modifica la información de un producto existente."
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Producto actualizado correctamente"),
-            @ApiResponse(responseCode = "400", description = "Datos enviados inválidos"),
-            @ApiResponse(responseCode = "404", description = "Producto no encontrado")
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Producto actualizado correctamente"
+            ),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "Datos inválidos enviados"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Producto no encontrado"
+            )
     })
     @PutMapping("/{id}")
     public ProductResponse updateProduct(
@@ -95,8 +119,14 @@ public class ProductController {
             description = "Realiza una eliminación lógica del producto cambiando su estado a inactivo."
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Producto eliminado correctamente"),
-            @ApiResponse(responseCode = "404", description = "Producto no encontrado")
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Producto eliminado correctamente"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Producto no encontrado"
+            )
     })
     @DeleteMapping("/{id}")
     public void deleteProduct(
