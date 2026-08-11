@@ -5,7 +5,7 @@ import com.glowlogic.api.dto.ProductResponse;
 import com.glowlogic.api.entity.Product;
 import com.glowlogic.api.repository.ProductRepository;
 import org.springframework.stereotype.Service;
-
+import com.glowlogic.api.exception.ProductNotFoundException;
 import java.util.List;
 
 @Service
@@ -27,7 +27,7 @@ public class ProductService {
     public ProductResponse getProductById(Long id) {
 
         Product product = productRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Producto no encontrado"));
+                .orElseThrow(() -> new ProductNotFoundException(id));
 
         return toResponse(product);
     }
@@ -50,7 +50,7 @@ public class ProductService {
     public ProductResponse updateProduct(Long id, ProductRequest request) {
 
         Product product = productRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Producto no encontrado"));
+                .orElseThrow(() -> new ProductNotFoundException(id));
 
         product.setName(request.getName());
         product.setDescription(request.getDescription());

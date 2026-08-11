@@ -6,6 +6,7 @@ import com.glowlogic.api.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import com.glowlogic.api.dto.UserRequest;
 import java.util.List;
+import com.glowlogic.api.exception.UserNotFoundException;
 
 @Service
 public class UserService {
@@ -41,7 +42,7 @@ public class UserService {
     public UserResponse getUserById(Long id) {
 
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+                .orElseThrow(() -> new UserNotFoundException(id));
 
         return toResponse(user);
     }
@@ -49,7 +50,7 @@ public class UserService {
     public UserResponse updateUser(Long id, UserRequest request) {
 
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+                .orElseThrow(() -> new UserNotFoundException(id));
 
         user.setFirstName(request.getFirstName());
         user.setLastName(request.getLastName());
@@ -75,7 +76,7 @@ public class UserService {
     public void deleteUser(Long id) {
 
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+                .orElseThrow(() -> new UserNotFoundException(id));
 
         user.setActive(false);
 
